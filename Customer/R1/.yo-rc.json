@@ -1,0 +1,159 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "versionNumberFirst",
+        "contentTypeOrder": "versionNumberFirst",
+        "customHeaderName": "versionNumberFirst"
+      },
+      "apiData": {
+        "returnDataType": "Test Data"
+      },
+      "records": {
+        "limit": "5"
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": false
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "security": {
+        "enabled": false,
+        "type": ""
+      },
+      "logging": {
+        "enabled": true
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": ""
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "customer",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"ID\":{\"type\":\"number\"},\"Name\":{\"type\":\"string\"},\"Age\":{\"type\":\"number\"}},\"required\":[\"ID\",\"Name\",\"Age\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": false,
+          "apiFakerMappingFileLocation": null,
+          "apiFakerMappingJsonType": null,
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null
+        }
+      ]
+    },
+    "apiOverview": {
+      "apiName": "Customer",
+      "apiBasePath": "/api",
+      "apiDescription": "This is customer"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "customer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"ID\":{\"type\":\"number\"},\"Name\":{\"type\":\"string\"},\"Age\":{\"type\":\"number\"}},\"required\":[\"ID\",\"Name\",\"Age\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": false,
+        "apiFakerMappingFileLocation": null,
+        "apiFakerMappingJsonType": null,
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "number"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Age": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "ID",
+            "Name",
+            "Age"
+          ]
+        }
+      }
+    ]
+  }
+}
